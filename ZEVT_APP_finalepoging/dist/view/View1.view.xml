@@ -1,0 +1,102 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml" class="sapUiSizeCompact" controllerName="ZEVT_APPZEVT_APP.controller.View1">
+	<App>
+		<Page title="Events Sessions App">
+			<VBox>
+				<l:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+					adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+					singleContainerFullSize="false">
+					<l:content>
+						<Label text="Events"/>
+						<ComboBox id="eyear" required="true" selectionChange="suggestionItemSelected" placeholder="Choose Event" items="{/ZyearSet}">
+							<core:Item text="{Peryr}" key="{Peryr}"/>
+						</ComboBox>
+						<Label text="Sessions"/>
+						<ComboBox id="eSession" required="false" selectionChange="suggestionItemSelected" placeholder="Choose Session" items="{/SessionSet}">
+							<core:Item text="{Perit}" key="{Perid}"/>
+						</ComboBox>
+							<Button press="loadSections" text="Load Details"/>
+						<!--	<Label text="Section"/>
+						<MultiComboBox id="permission" required="true" selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish"
+							items="{ path: 'sections>/results', length : '2000' }">
+							<core:Item key="{path: 'sections>Objid'}" text="{path: 'sections>AcdEvntPkgName'} {path: 'sections>StudyModule'}"/>
+						</MultiComboBox>-->
+					</l:content>
+				</l:SimpleForm>
+			</VBox>
+			<VBox>
+				<l:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+					adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+					singleContainerFullSize="false">
+					<l:content>
+						<!--<Label text="Day"/>
+						<ComboBox required="true" id="selected_day" selectionChange="suggestionItemSelected" placeholder="Choose Sections">
+							<core:Item text="MONDAY" key="1"/>
+							<core:Item text="TUESDAY" key="2"/>
+							<core:Item text="WEDNESDAY" key="3"/>
+							<core:Item text="THURSDAY" key="4"/>
+							<core:Item text="FRIDAY" key="5"/>
+							<core:Item text="SATURDAY" key="6"/>
+							<core:Item text="SUNDAY" key="7"/>
+						</ComboBox>-->
+						<Label text="Date"/>
+						<DatePicker value="{ path: '/date', type: 'sap.ui.model.type.Date'}"/>
+						<Label text="Time"/>
+						<TimePicker id="TP1" value="00:00" valueFormat="HH:mm" displayFormat="HH:mm" change="handleChange" placeholder="Enter Course Time"/>
+						<Label text="Description"/>
+						<Input id="noinstallment" type="Text" required="false" liveChange="getmonthlyinstallment"/>
+						<!--	<Button text="Add" press="addDayTime"/>-->
+						<!--	<Label text=""/>-->
+						<!--	<Table id="tbdaytime" mode="Delete" delete="onItemDelete">
+							<columns>
+								<Column hAlign="Center">
+									<Text text="Date"/>
+								</Column>
+								<Column hAlign="Center">
+									<Text text="Time"/>
+								</Column>
+							</columns>
+						</Table>-->
+						<Label text=""/>
+						<Button press="findClashes" text="Create"/>
+						<!--  <ComboBox required="true" id="trainee_rolee" selectionChange="suggestionItemSelected" 
+							placeholder="Choose Sections" items="{path:'strole>/Student_roles'}"> <core:Item 
+							text="{path:'strole>title'}" key="{path:'strole>id'}"/> </ComboBox>  -->
+					</l:content>
+				</l:SimpleForm>
+				<Table id="tbClashSt" items="{path:'stuClashes>/results'}">
+					<columns>
+						<Column hAlign="Center">
+							<Text text="Name"/>
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Date"/>
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Time"/>
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Description"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{path:'stuClashes>StdNo'}"/>
+								<Text text="{path:'stuClashes>StdName'}"/>
+								<Text text="{path:'stuClashes>CourseName'}"/>
+								<Text text="{path:'stuClashes>TimeTable', formatter: '.timeFormate'}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+			<footer>
+				<OverflowToolbar>
+					<ToolbarSpacer/>
+					<!--<Button id="onDataExport" type="Accept" text="Download" press="onExportPress" icon="sap-icon://download"/>-->
+				</OverflowToolbar>
+			</footer>
+		</Page>
+	</App>
+</core:View>

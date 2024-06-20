@@ -1,0 +1,62 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "Registrations" (
+	"ID"	TEXT,
+	"user_id"	TEXT,
+	"session_id"	TEXT,
+	"registrationDate"	DATE,
+	FOREIGN KEY("user_id") REFERENCES "Users"("ID"),
+	FOREIGN KEY("session_id") REFERENCES "Sessions"("ID"),
+	PRIMARY KEY("ID")
+);
+CREATE TABLE IF NOT EXISTS "Feedbacks" (
+	"ID"	TEXT,
+	"session_id"	TEXT,
+	"user_id"	TEXT,
+	"rating"	INTEGER,
+	"comment"	TEXT,
+	FOREIGN KEY("session_id") REFERENCES "Sessions"("ID"),
+	FOREIGN KEY("user_id") REFERENCES "Users"("ID"),
+	PRIMARY KEY("ID")
+);
+CREATE TABLE IF NOT EXISTS "Sessions" (
+	"ID"	TEXT,
+	"title"	TEXT,
+	"date"	DATE,
+	"startTime"	TIME,
+	"endTime"	TIME,
+	"description"	TEXT,
+	"event_id"	TEXT,
+	FOREIGN KEY("event_id") REFERENCES "Events"("ID"),
+	PRIMARY KEY("ID")
+);
+CREATE TABLE IF NOT EXISTS "Events" (
+	"ID"	TEXT,
+	"title"	TEXT,
+	"date"	DATE,
+	"location"	TEXT,
+	"description"	TEXT,
+	PRIMARY KEY("ID")
+);
+CREATE TABLE IF NOT EXISTS "Users" (
+	"ID"	TEXT,
+	"username"	TEXT,
+	"email"	TEXT,
+	"role"	INTEGER,
+	PRIMARY KEY("ID")
+);
+INSERT INTO "Registrations" VALUES ('1','1','1','2024-05-07');
+INSERT INTO "Registrations" VALUES ('2','2','2','2024-05-08');
+INSERT INTO "Registrations" VALUES ('3','3','3','2024-05-09');
+INSERT INTO "Feedbacks" VALUES ('1','1','1',4,'Great session! Learned a lot.');
+INSERT INTO "Feedbacks" VALUES ('2','2','2',3,'Good session. Could use more practical examples.');
+INSERT INTO "Feedbacks" VALUES ('3','3','3',5,'Excellent session! Engaging speaker and relevant content.');
+INSERT INTO "Sessions" VALUES ('1','Introduction to SAP Cloud Platform','2024-05-07','09:00:00','11:00:00','An overview of SAP Cloud Platform and its capabilities.','1');
+INSERT INTO "Sessions" VALUES ('2','Deep Dive into SAP S/4HANA','2024-05-08','10:00:00','12:00:00','In-depth exploration of SAP S/4HANA features and use cases.','2');
+INSERT INTO "Sessions" VALUES ('3','Hands-on Workshop: Building CAP Applications','2024-05-09','11:00:00','13:00:00','Practical session on building CAP applications with SAP technologies.','3');
+INSERT INTO "Events" VALUES ('1','SAP Cloud Platform Summit','2024-05-07','Virtual Event','Join us for a summit on SAP Cloud Platform.');
+INSERT INTO "Events" VALUES ('2','S/4HANA Conference','2024-05-08','Online Conference','Discover the latest innovations in SAP S/4HANA.');
+INSERT INTO "Events" VALUES ('3','CAP Applications Workshop','2024-05-09','SAP Labs Headquarters','Learn how to build CAP applications with experts from SAP Labs.');
+INSERT INTO "Users" VALUES ('1','JohnDoe','john.doe@example.com',1);
+INSERT INTO "Users" VALUES ('2','JaneSmith','jane.smith@example.com',2);
+INSERT INTO "Users" VALUES ('3','MarkJohnson','mark.johnson@example.com',1);
+COMMIT;

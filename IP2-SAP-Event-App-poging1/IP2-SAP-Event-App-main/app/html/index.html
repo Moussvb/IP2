@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event App</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <h1>Event App</h1>
+            <nav class="navigation">
+                <a href="#">Mijn evenementen</a>
+                <a href="#">Log in</a>
+                <a href="#">Mijn profiel</a>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="event-container">
+        <h2>Evenement Zoeken</h2>
+        <form action="events.html" method="GET">
+            <div class="inhoud-container">
+                <div class="left-side">
+                    <select name="categorie" class="categorie-kiezen">
+                        <option value="technologie">Technologie</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="startups">Startups</option>
+                        <option value="milieubewustzijn">Milieubewustzijn</option>
+                        <option value="creativiteit">Creativiteit</option>
+                    </select>
+                </div>
+                <div class="right-side">
+                    <div class="zoekbalk">
+                        <input type="text" name="zoekterm" placeholder="Evenement opzoeken">
+                    </div>
+                    <div class="locatie">
+                        <input type="text" name="locatie" placeholder="Locatie">
+                    </div>
+                    <div class="datum">
+                        <input type="date" name="datum">
+                    </div>
+                    <div class="deelnemers">
+                        <input type="number" name="aantal_deelnemers" placeholder="Aantal deelnemers">
+                    </div>
+                    <div class="zoeken-knop">
+                        <input type="submit" value="Zoeken">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

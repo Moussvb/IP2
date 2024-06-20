@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(0, 159, 215); 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /
+}
+
+header h1 {
+    font-size: 24px;
+    color: #ff7f50; 
+}
+
+nav a {
+    margin: 0 10px;
+    color: rgb(0, 159, 215); 
+    text-decoration: none;
+}
+
+.language-switch a {
+    text-decoration: none;
+    color: #333;
+}
+
+.language-switch a.active {
+    font-weight: bold;
+    color: #ff7f50; 
+}
+
+main {
+    display: flex;
+    padding: 20px;
+}
+
+.filters {
+    flex: 1;
+    margin-right: 20px;
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.filters h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filters label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filters input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.filters button {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: #e7f3ff; 
+    cursor: pointer;
+    border-radius: 5px; 
+}
+
+.filters button.active {
+    background: #ff7f50; 
+    color: white;
+}
+
+.filters input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: calc(100% - 20px); 
+    border-radius: 5px; 
+    border: 1px solid #ccc;
+}
+
+.event-cards {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.event-card {
+    background: white;
+    border: 1px solid #ddd; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.event-header h3 {
+    font-size: 18px;
+    color: #ff7f50; 
+}
+
+.event-header h4 {
+    font-size: 18px;
+    color: #333;
+}
+
+textarea {
+    border: 1px solid #ccc;
+    resize: none;
+    width: 100%; 
+    margin-top: 10px; 
+    height: 100px; 
+    border-radius: 5px; 
+    padding: 10px; 
+    font-family: Arial, sans-serif; 
+    font-size: 14px; 
+}
+.input-prefix {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-prefix span {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-prefix input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-left: none; 
+    border-radius: 0 5px 5px 0; 
+    width: auto; 
+}

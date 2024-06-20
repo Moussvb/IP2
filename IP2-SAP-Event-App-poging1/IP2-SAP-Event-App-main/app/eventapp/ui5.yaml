@@ -1,0 +1,4 @@
+specVersion: "2.5"
+metadata:
+  name: ip2.eventapp
+type: application

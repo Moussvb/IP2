@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evenementdetails</title>
+    <link rel="stylesheet" href="../css/events.css">
+</head>
+<body>
+    <header>
+        <h1>Events</h1>
+        <nav>
+            <a href="#">Aanmaken evenement</a>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="filters">
+            <h2>Grootte evenement</h2>
+            <label><input type="checkbox" name="size1" value="1"> 35&gt; </label>
+            <label><input type="checkbox" name="size2" value="2"> 35-75</label>
+            <label><input type="checkbox" name="size3" value="3"> 75-150</label>
+            <label><input type="checkbox" name="size4" value="4"> &gt;150 </label>
+
+            <h2>Categorie</h2>
+            <button type="button">Technologie</button>
+            <button type="button">Marketing</button>
+            <button type="button" class="active">Startups</button>
+            <button type="button">Creativiteit</button>
+
+            <h2>Prijs</h2>
+            <label for="price_from">Van</label>
+            <div class="input-prefix">
+                <span>€</span>
+                <input type="number" id="price_from" name="price_from" min="0">
+            </div>
+
+            <label for="price_to">Tot</label>
+            <div class="input-prefix">
+                <span>€</span>
+                <input type="number" id="price_to" name="price_to" min="0">
+            </div>
+        </aside>
+
+        <section class="event-cards" id="eventsContainer">
+        </section>
+    </main>
+
+    <script src="../js/events.js"></script>
+</body>
+</html>

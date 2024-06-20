@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgb(0, 159, 215);
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 2em;
+    color: #ff7f50;
+    margin: 0;
+}
+
+.navigation a {
+    margin: 0 10px;
+    color: rgb(0, 159, 215);
+    text-decoration: none;
+}
+
+.navigation .language-switch {
+    display: inline-block;
+}
+
+.navigation .language-switch a {
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navigation .language-switch a.active {
+    color: #ff7f50;
+}
+
+.event-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 40px auto;
+}
+
+.inhoud-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left-side,
+.right-side {
+    flex: 1;
+}
+
+.categorie-kiezen,
+.zoekbalk input,
+.locatie input,
+.datum input,
+.deelnemers input {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    width: calc(100% - 24px);
+}
+
+input[type="submit"] {
+    background-color: rgb(0, 159, 215);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff7f50;
+}

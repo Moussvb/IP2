@@ -1,0 +1,1 @@
+using EventManagementService as service from '../../db/service';

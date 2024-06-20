@@ -1,0 +1,35 @@
+{
+  "name": "eventapp",
+  "version": "1.0.0",
+  "description": "SAP CAP project for Integration project 2",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "database": "C:/Users/Moussab/source/repos/IP2-SAP-Event-App/IP2-SAP-Event-App/db/Sqlite/db.sqlite"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@sap/cds": "^7.9.0",
+    "@sap/cds-dk": "^7",
+    "express": "^4",
+    "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "start": "cds watch",
+    "deploy": "cds deploy",
+    "watch-eventapp": "cds watch --open eventapp/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/eventapp"
+  ],
+  "devDependencies": {
+    "@sap/ux-specification": "^1.120.11"
+  }
+}
